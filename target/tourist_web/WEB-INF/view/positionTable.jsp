@@ -7,14 +7,16 @@
 <br>
 <table>
     <tr>
+        <th>Id</th>
         <th>Position</th>
     </tr>
     <c:forEach var="pos" items="${allPos}">
         <tr>
+            <td> ${pos.id}</td>
             <td> ${pos.positionType}</td>
         </tr>
     </c:forEach>
 </table>
 
-<a href="/employee/add-form"> Add new Position</a>
+<a href="/position/add"> Add new Position</a>
 </body>

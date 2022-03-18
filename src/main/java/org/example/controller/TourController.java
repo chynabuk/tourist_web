@@ -2,7 +2,8 @@ package org.example.controller;
 
 import org.example.entities.Employee;
 import org.example.entities.Position;
-import org.example.services.PositionService;
+import org.example.entities.TourType;
+import org.example.services.TourTypeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -13,16 +14,15 @@ import org.springframework.web.bind.annotation.RequestParam;
 import java.util.List;
 
 @Controller
-@RequestMapping("/position")
-public class PositionController {
+@RequestMapping("/tour")
+public class TourController {
     @Autowired
-    private PositionService positionService;
+    private TourTypeService tourTypeService;
 
-    @RequestMapping("/get-all")
-    public String getAllPosition(Model model){
-        List<Position> positions = positionService.getAll();
-        positions.forEach(p -> System.out.println(p.getPositionType().toString()));
-        model.addAttribute("allPos", positions);
-        return "positionTable";
+    @RequestMapping("/type/get-all")
+    public String showAllTourTypes(Model model){
+        List<TourType> tourTypes = tourTypeService.getAll();
+        model.addAttribute("tourTypes", tourTypes);
+        return "tourTypeTable";
     }
 }

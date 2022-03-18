@@ -1,12 +1,12 @@
 package org.example.dao.extd.impl;
 
 import org.example.dao.extd.PositionDao;
-import org.example.entities.Employee;
 import org.example.entities.Position;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -15,6 +15,7 @@ public class PositionDaoImpl implements PositionDao {
     @Autowired
     private SessionFactory sessionFactory;
 
+    @Transactional
     @Override
     public void insert(Position position) {
         Session session = sessionFactory.getCurrentSession();

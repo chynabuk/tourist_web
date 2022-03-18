@@ -11,7 +11,9 @@
         <th>Passport number</th>
         <th>Full name</th>
         <th>Address</th>
+        <th>Position</th>
         <th>Delete</th>
+        <th>Update</th>
     </tr>
     <c:forEach var="emp" items="${allEmps}">
         <tr>
