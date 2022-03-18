@@ -5,6 +5,7 @@ import org.example.entities.Position;
 import org.example.services.EmployeeService;
 import org.example.services.PositionService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -32,12 +33,12 @@ public class EmployeeController {
 
     @RequestMapping("/add-form")
     public String addNewEmployee(Model model){
-        model.addAttribute("employee", new Employee());
+        model.addAttribute("empAdd", new Employee());
         return "employeeSaveForm";
     }
 
     @RequestMapping("/save")
-    public String saveEmployee(@ModelAttribute("employee") Employee employee, @RequestParam Integer positionId){
+    public String saveEmployee(@ModelAttribute("empAdd") Employee employee, @RequestParam Integer positionId){
         Position position = positionService.getBy(positionId);
         System.out.println(positionId);
         employee.setPosition(position);
@@ -46,9 +47,22 @@ public class EmployeeController {
     }
 
     @RequestMapping("/edit/{passportNumber}")
-    public String editEmployee(@PathVariable(value = "passportNumber") Integer passportNumber, Model model){
-        model.addAttribute("employee", employeeService.getBy(passportNumber));
-        return "employeeSaveForm";
+    public String editEmployee(Model model, @PathVariable(value = "passportNumber") Integer passportNumber){
+        Employee employee = employeeService.getBy(passportNumber);
+        model.addAttribute("empEdit", employee);
+
+        return "employeeEditForm";
+    }
+
+    @RequestMapping("/update")
+    public String updateEmployee(@ModelAttribute("empEdit") Employee employee, @RequestParam Integer positionId){
+        if (positionId != null){
+            Position position = positionService.getBy(positionId);
+            employee.setPosition(position);
+        }
+        employeeService.update(employee);
+
+        return "redirect:/employee/get-all";
     }
 
     @RequestMapping("/delete/{passportNumber}")

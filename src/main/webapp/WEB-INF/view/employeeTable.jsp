@@ -18,6 +18,7 @@
             <td> ${emp.passportNumber}</td>
             <td> ${emp.fullName}</td>
             <td> ${emp.address}</td>
+            <td> ${emp.position.positionType}</td>
             <td>
                 <form:form action="delete/${emp.passportNumber}"><button type="submit">Delete</button></form:form>
             </td>

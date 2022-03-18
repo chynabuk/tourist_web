@@ -1,4 +1,5 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html >
@@ -8,10 +9,10 @@
 <h2>EMPLOYEE ADD FORM</h2>
 <br>
 <br>
-<form:form action="save" modelAttribute="employee">
-    Fullname <form:input path="fullName"/>
-    <br><br>
+<form:form action="save" modelAttribute="empAdd">
     Passport number <form:input path="passportNumber"/>
+    <br><br>
+    Fullname <form:input path="fullName"/>
     <br><br>
     Address <form:input path="address"/>
     <br><br>

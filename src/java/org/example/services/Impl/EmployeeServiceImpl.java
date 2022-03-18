@@ -21,13 +21,18 @@ public class EmployeeServiceImpl implements EmployeeService {
     }
 
     @Override
+    public void update(Employee employee) {
+        employeeDao.update(employee);
+    }
+
+    @Override
     public void delete(Integer passportNumber) {
         employeeDao.delete(passportNumber);
     }
 
     @Override
-    public Employee getBy(Integer employeeId) {
-        return null;
+    public Employee getBy(Integer passportNumber) {
+        return employeeDao.getBy(passportNumber);
     }
 
     @Override

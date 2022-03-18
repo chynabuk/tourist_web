@@ -6,11 +6,11 @@
 <head>
 </head>
 <body>
-<h2>EMPLOYEE ADD FORM</h2>
+<h2>EMPLOYEE EDIT FORM</h2>
 <br>
 <br>
-<form:form action="save" modelAttribute="empAdd">
-    Passport number <form:input path="passportNumber"/>
+<form:form action="update" modelAttribute="empEdit">
+    <form:hidden path="passportNumber"/>
     <br><br>
     Fullname <form:input path="fullName"/>
     <br><br>
@@ -27,7 +27,7 @@
     <br><br>
     Position <input type="number" id="positionId" name="positionId" placeholder="Enter id of Position"/>
     <br><br>
-    <input type="submit" value="Save"/>
+    <button type="submit">Update</button>
 </form:form>
 </body>
 </html>

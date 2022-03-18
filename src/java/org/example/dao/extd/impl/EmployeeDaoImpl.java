@@ -15,9 +15,9 @@ public class EmployeeDaoImpl implements EmployeeDao {
     private SessionFactory sessionFactory;
 
     @Override
-    public void delete(Integer employeeId) {
+    public void delete(Integer passportNumber) {
         Session session = sessionFactory.getCurrentSession();
-        session.delete(getBy(employeeId));
+        session.delete(getBy(passportNumber));
     }
 
     @Override
@@ -27,9 +27,9 @@ public class EmployeeDaoImpl implements EmployeeDao {
     }
 
     @Override
-    public Employee getBy(Integer employeeId) {
+    public Employee getBy(Integer passportNumber) {
         Session session = sessionFactory.getCurrentSession();
-        Employee employee = session.get(Employee.class, employeeId);
+        Employee employee = session.get(Employee.class, passportNumber);
         return employee;
     }
 
@@ -41,7 +41,8 @@ public class EmployeeDaoImpl implements EmployeeDao {
     }
 
     @Override
-    public void update() {
-
+    public void update(Employee employee) {
+        Session session = sessionFactory.getCurrentSession();
+        session.update(employee);
     }
 }
