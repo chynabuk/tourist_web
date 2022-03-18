@@ -15,8 +15,8 @@ public class PositionDaoImpl implements PositionDao {
     @Autowired
     private SessionFactory sessionFactory;
 
-    @Transactional
     @Override
+    @Transactional
     public void insert(Position position) {
         Session session = sessionFactory.getCurrentSession();
         session.save(position);

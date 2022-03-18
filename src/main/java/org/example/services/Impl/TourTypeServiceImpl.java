@@ -39,7 +39,7 @@ public class TourTypeServiceImpl implements TourTypeService {
 
     @Override
     public void addAll() {
-        if (getAll().isEmpty()){
+        if (getAll().isEmpty() || getAll() == null){
             TourType t1 = new TourType();
             t1.setTourTypeEnum(TourTypeEnum.SPORT);
             insert(t1);

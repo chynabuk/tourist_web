@@ -20,11 +20,6 @@ public class MainController {
 
     @RequestMapping("/")
     public String mainPage(){
-        return "index";
-    }
-
-    @RequestMapping("/addAll")
-    public String addPositions(){
         addAll();
         return "index";
     }

@@ -35,7 +35,7 @@ public class PositionServiceImpl implements PositionService{
 
     @Override
     public void addAll() {
-        if (getAll().isEmpty()){
+        if (getAll().isEmpty() || getAll() == null){
             Position p1 = new Position();
             p1.setPositionType(PositionTypeEnum.DEPUTY_DIRECTOR);
             insert(p1);

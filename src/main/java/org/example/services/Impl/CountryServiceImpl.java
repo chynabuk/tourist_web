@@ -6,10 +6,12 @@ import org.example.enums.CountriesEnum;
 import org.example.services.CountrySevice;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
 @Service
+@Transactional
 public class CountryServiceImpl implements CountrySevice {
     @Autowired
     private CountryDao countryDao;
@@ -36,7 +38,7 @@ public class CountryServiceImpl implements CountrySevice {
 
     @Override
     public void addAll() {
-        if (getAll().isEmpty()){
+        if (getAll().isEmpty() || getAll() == null){
             Country c1 = new Country();
             c1.setCountriesEnum(CountriesEnum.KYRGYZSTAN);
             insert(c1);
