@@ -23,7 +23,9 @@
                 <form:form action="delete/${emp.passportNumber}"><button type="submit">Delete</button></form:form>
             </td>
             <td>
-                <form:form action="edit/${emp.passportNumber}"><button type="submit">Edit</button></form:form>
+                <form:form action="edit">
+                    <input hidden type="number" id="passportNumber" name="passportNumber" value="${emp.passportNumber}"/>
+                    <button type="submit">Edit</button></form:form>
             </td>
         </tr>
     </c:forEach>

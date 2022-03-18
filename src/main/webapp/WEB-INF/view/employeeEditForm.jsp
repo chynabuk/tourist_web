@@ -10,6 +10,7 @@
 <br>
 <br>
 <form:form action="update" modelAttribute="empEdit">
+
     <form:hidden path="passportNumber"/>
     <br><br>
     Fullname <form:input path="fullName"/>
@@ -27,7 +28,7 @@
     <br><br>
     Position <input type="number" id="positionId" name="positionId" placeholder="Enter id of Position"/>
     <br><br>
-    <button type="submit">Update</button>
+    <input type="submit">Update</input>
 </form:form>
 </body>
 </html>

@@ -40,14 +40,13 @@ public class EmployeeController {
     @RequestMapping("/save")
     public String saveEmployee(@ModelAttribute("empAdd") Employee employee, @RequestParam Integer positionId){
         Position position = positionService.getBy(positionId);
-        System.out.println(positionId);
         employee.setPosition(position);
         employeeService.insert(employee);
         return "redirect:/employee/get-all";
     }
 
-    @RequestMapping("/edit/{passportNumber}")
-    public String editEmployee(Model model, @PathVariable(value = "passportNumber") Integer passportNumber){
+    @RequestMapping("/edit")
+    public String editEmployee(Model model, @RequestParam(value = "passportNumber") Integer passportNumber){
         Employee employee = employeeService.getBy(passportNumber);
         model.addAttribute("empEdit", employee);
 
