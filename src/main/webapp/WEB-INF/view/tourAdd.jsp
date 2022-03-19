@@ -20,7 +20,6 @@
     <br><br>
     End date <form:input type="date" path="endDate"/>
     <br><br>
-
     Tour types:<br>
     1. SPORT<br>
     2. SHOP<br>

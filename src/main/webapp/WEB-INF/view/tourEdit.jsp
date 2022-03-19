@@ -9,8 +9,8 @@
 <h2>Tour ADD FORM</h2>
 <br>
 <br>
-<form:form action="save" modelAttribute="tourAdd">
-    Tour number <form:input path="tourNumber"/>
+<form:form action="update" modelAttribute="tourEdit">
+    <form:hidden path="tourNumber"/>
     <br><br>
     Name <form:input path="name"/>
     <br><br>
@@ -32,11 +32,10 @@
     3. USA<br><br>
     <input type="number" id="countryId" name="countryId" placeholder="Enter id of country"/>
     <br><br>
-
     Programs:<br>
     <input type="number" id="programNumber" name="programNumber" placeholder="Enter number of Program"/>
-
-    <input type="submit" value="Save"/>
+    <br><br>
+    <input type="submit" value="Update"/>
 </form:form>
 </body>
 </html>

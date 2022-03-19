@@ -24,13 +24,13 @@
             <td> ${tour.tourNumber}</td>
             <td> ${tour.name}</td>
             <td> ${tour.status}</td>
-            <td> ${tour.startDate.toString()}</td>
-            <td> ${tour.endDate.toString()}</td>
-            <td> ${tour.tourType}</td>
-            <td> ${tour.country}</td>
-            <td> ${tour.program}</td>
+            <td> ${tour.startDate}</td>
+            <td> ${tour.endDate}</td>
+            <td> ${tour.tourType.tourTypeEnum}</td>
+            <td> ${tour.country.countriesEnum}</td>
+            <td> ${tour.program.description}</td>
             <td>
-                <form:form action="delete/${tour.passportNumber}"><button type="submit">Delete</button></form:form>
+                <form:form action="delete/${tour.tourNumber}"><button type="submit">Delete</button></form:form>
             </td>
             <td>
                 <form:form action="edit">

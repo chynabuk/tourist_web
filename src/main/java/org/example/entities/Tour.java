@@ -26,15 +26,14 @@ public class Tour {
     private Country country;
 
     @Column
-    @DateTimeFormat(pattern = "dd-MM-yyyy")
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date startDate;
 
     @Column
-    @DateTimeFormat(pattern = "dd-MM-yyyy")
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date endDate;
 
     @ManyToOne
-    @JoinColumn(name = "program_number")
     private Program program;
 
     @Column
