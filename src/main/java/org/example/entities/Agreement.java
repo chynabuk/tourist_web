@@ -19,8 +19,8 @@ public class Agreement {
     @Id
     private Integer agreementNumber;
 
-    @DateTimeFormat(pattern = "dd-MM-yyyy")
     @Column
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date formalizationDate;
 
     @Nullable

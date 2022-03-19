@@ -10,6 +10,8 @@
     <tr>
         <th>Ticket Number</th>
         <th>Event name</th>
+        <th>Delete</th>
+        <th>Update</th>
     </tr>
     <c:forEach var="et" items="${eTickets}">
         <tr>

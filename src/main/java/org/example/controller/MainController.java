@@ -1,9 +1,7 @@
 package org.example.controller;
 
-import org.example.services.CountrySevice;
-import org.example.services.HotelClassService;
-import org.example.services.PositionService;
-import org.example.services.TourTypeService;
+import org.example.entities.AviaClass;
+import org.example.services.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -22,6 +20,9 @@ public class MainController {
     @Autowired
     private HotelClassService hotelClassService;
 
+    @Autowired
+    private AviaClassService aviaClassService;
+
     @RequestMapping("/")
     public String mainPage(){
         addAll();
@@ -33,6 +34,7 @@ public class MainController {
         countrySevice.addAll();
         tourTypeService.addAll();
         hotelClassService.addAll();
+        aviaClassService.addAll();
     }
 
 

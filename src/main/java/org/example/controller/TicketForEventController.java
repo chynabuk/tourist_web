@@ -68,7 +68,7 @@ public class TicketForEventController {
     }
 
     @RequestMapping("/delete/{ticketNumber}")
-    public String deleteEvent(@PathVariable(value = "ticketNumber") Integer ticketNumber){
+    public String deleteEventTicket(@PathVariable(value = "ticketNumber") Integer ticketNumber){
         ticketForEventService.delete(ticketNumber);
         return "redirect:/eventTicket/get-all";
     }
