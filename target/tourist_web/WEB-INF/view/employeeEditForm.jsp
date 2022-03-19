@@ -17,18 +17,12 @@
     <br><br>
     Address <form:input path="address"/>
     <br><br>
-    1. DEPUTY_DIRECTOR
-    <br>
-    2. TOUR_MANAGER,
-    <br>
-    3. TOUR_PLANNER,
-    <br>
-    4. DEPUTY_MANAGER
-    <br>
+    Positions: <br>
+    <c:forEach var="pos" items="${allPos}">
+        <p>${pos.id}. ${pos.positionType}</p>
+    </c:forEach>
     <br><br>
-    Position <input type="number" id="positionId" name="positionId" placeholder="Enter id of Position"/>
-    <br><br>
-    <input type="submit">Update</input>
+    <input type="submit" value="Update"/>
 </form:form>
 </body>
 </html>

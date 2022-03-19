@@ -21,18 +21,21 @@
     End date <form:input type="date" path="endDate"/>
     <br><br>
     Tour types:<br>
-    1. SPORT<br>
-    2. SHOP<br>
-    3. SIGHTSEEING<br><br>
+    <c:forEach var="tType" items="${tourTypes}">
+        <p>${tType.id}. ${tType.tourTypeEnum}</p>
+    </c:forEach>
     <input type="number" id="tourTypeId" name="tourTypeId" placeholder="Enter id of tour type"/>
     <br><br>
     Countries:<br>
-    1. Kyrgyzstan<br>
-    2. Germany<br>
-    3. USA<br><br>
+    <c:forEach var="country" items="${countries}">
+        <p>${country.id}. ${country.countriesEnum}</p>
+    </c:forEach>
     <input type="number" id="countryId" name="countryId" placeholder="Enter id of country"/>
     <br><br>
     Programs:<br>
+    <c:forEach var="program" items="${programs}">
+        <p>${program.programNumber}. ${program.description}</p>
+    </c:forEach> <br>
     <input type="number" id="programNumber" name="programNumber" placeholder="Enter number of Program"/>
     <br><br>
     <input type="submit" value="Update"/>

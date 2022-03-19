@@ -22,12 +22,8 @@ public class TourFlight {
     private String aviaCompany;
 
     @Column
-    @DateTimeFormat(pattern = "dd-MM-yyyy")
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date departureDate;
-
-    @Column
-    @DateTimeFormat(pattern = "hh:mm:ss")
-    private Time departureTime;
 
     @Column
     private String departureCity;

@@ -33,6 +33,8 @@ public class EmployeeController {
     @RequestMapping("/add-form")
     public String addNewEmployee(Model model){
         model.addAttribute("empAdd", new Employee());
+        List<Position> positions = positionService.getAll().subList(0, 4);
+        model.addAttribute("allPos", positions);
         return "employeeSaveForm";
     }
 
@@ -45,10 +47,11 @@ public class EmployeeController {
     }
 
     @RequestMapping("/edit")
-    public String editEmployee(Model model, @RequestParam(value = "passportNumber") Integer passportNumber){
+    public String editEmployee(Model model, @RequestParam Integer passportNumber){
         Employee employee = employeeService.getBy(passportNumber);
         model.addAttribute("empEdit", employee);
-
+        List<Position> positions = positionService.getAll().subList(0, 4);
+        model.addAttribute("allPos", positions);
         return "employeeEditForm";
     }
 

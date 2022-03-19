@@ -41,6 +41,12 @@ public class TourController {
     @RequestMapping("/add")
     public String addNewTour(Model model){
         model.addAttribute("tourAdd", new Tour());
+        List<TourType> tourTypes = tourTypeService.getAll().subList(0, 3);
+        model.addAttribute("tourTypes", tourTypes);
+        List<Country> countries = countrySevice.getAll().subList(0, 3);
+        model.addAttribute("countries", countries);
+        List<Program> programs = programService.getAll();
+        model.addAttribute("programs", programs);
         return "tourAdd";
     }
 
