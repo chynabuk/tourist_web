@@ -39,17 +39,11 @@ public class CountryServiceImpl implements CountrySevice {
     @Override
     public void addAll() {
         if (getAll().isEmpty() || getAll() == null){
-            Country c1 = new Country();
-            c1.setCountriesEnum(CountriesEnum.KYRGYZSTAN);
-            insert(c1);
-
-            Country c2 = new Country();
-            c2.setCountriesEnum(CountriesEnum.GERMANY);
-            insert(c2);
-
-            Country c3 = new Country();
-            c3.setCountriesEnum(CountriesEnum.USA);
-            insert(c3);
+            for (CountriesEnum countriesEnum : CountriesEnum.values()){
+                Country country = new Country();
+                country.setCountriesEnum(countriesEnum);
+                insert(country);
+            }
         }
     }
 }

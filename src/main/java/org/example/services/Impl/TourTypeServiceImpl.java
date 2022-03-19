@@ -40,17 +40,11 @@ public class TourTypeServiceImpl implements TourTypeService {
     @Override
     public void addAll() {
         if (getAll().isEmpty() || getAll() == null){
-            TourType t1 = new TourType();
-            t1.setTourTypeEnum(TourTypeEnum.SPORT);
-            insert(t1);
-
-            TourType t2 = new TourType();
-            t2.setTourTypeEnum(TourTypeEnum.SHOP);
-            insert(t2);
-
-            TourType t3 = new TourType();
-            t3.setTourTypeEnum(TourTypeEnum.SIGHTSEEING);
-            insert(t3);
+            for (TourTypeEnum tourTypeEnum : TourTypeEnum.values()){
+                TourType tourType = new TourType();
+                tourType.setTourTypeEnum(tourTypeEnum);
+                insert(tourType);
+            }
         }
     }
 }
