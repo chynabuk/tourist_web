@@ -12,7 +12,11 @@ import javax.persistence.*;
 @Getter
 @Setter
 @NoArgsConstructor
-public class HotelClass extends BaseEntity{
+public class HotelClass{
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Integer id;
+
     @Column
     @Enumerated(EnumType.STRING)
     private HotelClassEnum hotelClassEnum;

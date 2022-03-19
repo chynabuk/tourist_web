@@ -12,7 +12,11 @@ import javax.persistence.*;
 @Getter
 @Setter
 @NoArgsConstructor
-public class AviaClass extends BaseEntity{
+public class AviaClass{
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Integer id;
+
     @Column
     @Enumerated(EnumType.STRING)
     private AviaClassEnum aviaClassEnum;

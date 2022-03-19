@@ -6,7 +6,7 @@
 <head>
 </head>
 <body>
-<h2>Tour ADD FORM</h2>
+<h2>Tour Edit FORM</h2>
 <br>
 <br>
 <form:form action="update" modelAttribute="tourEdit">

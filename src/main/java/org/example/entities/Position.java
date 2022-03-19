@@ -12,7 +12,11 @@ import javax.persistence.*;
 @Getter
 @Setter
 @NoArgsConstructor
-public class Position extends BaseEntity{
+public class Position{
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Integer id;
+
     @Column
     @Enumerated(EnumType.STRING)
     private PositionTypeEnum positionType;

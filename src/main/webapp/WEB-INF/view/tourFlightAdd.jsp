@@ -22,6 +22,7 @@
     <br><br>
     Direction <form:input path="direction"/>
 
+    Tours: <br>
     <c:forEach var="tour" items="${allTours}">
         <p>${tour.tourNumber}. ${tour.name}</p>
     </c:forEach>

@@ -4,6 +4,7 @@
 <a href="/employee/get-all">Employee List</a> <br>
 <a href="/tour/get-all">Tour List</a> <br>
 <a href="/tourist/get-all">Tourist List</a> <br>
-<a href="/tourFlight/get-all">TourFlight List</a>
+<a href="/tourFlight/get-all">TourFlight List</a> <br>
+<a href="/event/get-all">Event List</a> <br>
 </body>
 </html>

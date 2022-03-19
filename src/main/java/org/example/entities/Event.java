@@ -7,13 +7,18 @@ import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
 import java.sql.Time;
+import java.util.Date;
 
 @Entity
 @Table(name = "events")
 @Getter
 @Setter
 @NoArgsConstructor
-public class Event extends BaseEntity{
+public class Event{
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Integer id;
+
     @Column
     private String city;
 
@@ -21,8 +26,8 @@ public class Event extends BaseEntity{
     private String eventPlace;
 
     @Column
-    @DateTimeFormat(pattern = "hh:mm:ss")
-    private Time startTime;
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
+    private Date date;
 
     @Column
     private String name;

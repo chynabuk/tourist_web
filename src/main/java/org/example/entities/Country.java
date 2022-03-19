@@ -12,7 +12,11 @@ import javax.persistence.*;
 @Getter
 @Setter
 @NoArgsConstructor
-public class Country extends BaseEntity{
+public class Country{
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Integer id;
+
     @Column
     @Enumerated(EnumType.STRING)
     private CountriesEnum countriesEnum;

@@ -12,7 +12,11 @@ import javax.persistence.*;
 @Getter
 @Setter
 @NoArgsConstructor
-public class TourType extends BaseEntity{
+public class TourType{
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Integer id;
+
     @Column
     @Enumerated(EnumType.STRING)
     private TourTypeEnum tourTypeEnum;
