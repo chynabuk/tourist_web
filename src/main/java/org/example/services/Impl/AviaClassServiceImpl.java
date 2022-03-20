@@ -33,7 +33,7 @@ public class AviaClassServiceImpl implements AviaClassService {
 
     @Override
     public void addAll() {
-        if (getAll().isEmpty()){
+        if (getAll().isEmpty() || getAll() == null){
             for (AviaClassEnum aviaClassEnum : AviaClassEnum.values()){
                 AviaClass aviaClass = new AviaClass();
                 aviaClass.setAviaClassEnum(aviaClassEnum);

@@ -25,7 +25,7 @@ public class HotelClassServiceImpl implements HotelClassService {
 
     @Override
     public void addAll() {
-        if (!hotelClassDao.getAll().isEmpty()){
+        if (getAll().isEmpty() || getAll() == null){
             for (HotelClassEnum hotelClassEnum : HotelClassEnum.values()){
                 HotelClass hotelClass = new HotelClass();
                 hotelClass.setHotelClassEnum(hotelClassEnum);

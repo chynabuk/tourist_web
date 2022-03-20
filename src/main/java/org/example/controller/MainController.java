@@ -23,6 +23,9 @@ public class MainController {
     @Autowired
     private AviaClassService aviaClassService;
 
+    @Autowired
+    private HotelNumberCategoryService hotelNumberCategoryService;
+
     @RequestMapping("/")
     public String mainPage(){
         addAll();
@@ -35,6 +38,7 @@ public class MainController {
         tourTypeService.addAll();
         hotelClassService.addAll();
         aviaClassService.addAll();
+        hotelNumberCategoryService.addAll();
     }
 
 
