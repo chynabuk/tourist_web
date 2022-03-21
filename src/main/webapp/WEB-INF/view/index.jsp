@@ -10,5 +10,10 @@
 <a href="/hotel/get-all">Hotel List</a> <br>
 <a href="/client/get-all">Client List</a> <br>
 <a href="/agreement/get-all">Agreement List</a> <br>
+<a href="/hotelNumberPermit/get-all">Hotel Number Permit List</a> <br>
+<a href="/permitTicket/get-all">Permit Tickets List</a> <br>
+<a href="/aviaTicketPermit/get-all">Avia Ticket Permit List</a> <br>
+<a href="/order/get-all">Order List</a>
+<a href="/tourTask/get-all">Tour Task List</a>
 </body>
 </html>

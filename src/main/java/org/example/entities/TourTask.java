@@ -6,6 +6,7 @@ import lombok.Setter;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
+import java.sql.Date;
 import java.sql.Time;
 
 @Entity
@@ -29,8 +30,8 @@ public class TourTask {
     private String description;
 
     @Column
-    @DateTimeFormat(pattern = "hh:mm:ss")
-    private Time timeCompletion;
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
+    private Date date;
 
     @Column
     private String status;
